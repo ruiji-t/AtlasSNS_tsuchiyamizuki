@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
 
+
 class RegisterController extends Controller
 {
     /*
@@ -42,6 +43,14 @@ class RegisterController extends Controller
     public function register(Request $request){
         if($request->isMethod('post')){
 
+            // バリデーション設定
+            $request->validate([
+                'username' => 'required|min:2|max:12',
+                'mail' => 'required|min:5|max:40|unique:users,mail|email',
+                'password' => 'required|min:8|max:20|alpha_num|confirmed',
+                'password_confirmation' => 'required|min:8|max:20|alpha_num'
+            ]);
+
             $username = $request->input('username');
             $mail = $request->input('mail');
             $password = $request->input('password');
@@ -52,6 +61,7 @@ class RegisterController extends Controller
                 'password' => bcrypt($password),
             ]);
 
+            $request->session()->put('username',$username);
             return redirect('added');
         }
         return view('auth.register');
