@@ -20,29 +20,30 @@
     <!--OGPタグ/twitterカード-->
 </head>
 <body>
-    <header>
-        <div id = "head">
-        <h1>
-            <a href="/top">
-                <img src="images/atlas.png">
-            </a>
-        </h1>
-        <!-- アコーディオンメニュー -->
-            <nav id="accordionMenu">
-                <div id="arrowIcon">
-                    <p>{{ Auth::user()->username }}さん</p>
-                    <span></span>
-                    <span></span>
-                </div>
+    <header >
+        <div class="container">
+            <div class="atlas_icon">
+                <a href="/top"><img src="images/atlas.png"></a>
+            </div>
+            <!-- ログインユーザー名 -->
+            <div class="user_name">
+                <p>{{ Auth::user()->username }}  さん</p>
+            </div>
+            <!-- アコーディオンメニュー -->
+            <div class="menu_button">
+                <span class="arrow"></span>
+            </div>
+            <nav class="accordion_menu">
                 <ul>
-                    <li class="menu_content"><a href="/top">ホーム</a></li>
-                    <li class="menu_content"><a href="/profile">プロフィール</a></li>
-                    <li class="menu_content"><a href="/logout">ログアウト</a></li>
+                    <li class="accordion_list"><a href="/top">HOME</a></li>
+                    <li class="accordion_list"><a href="/profile">プロフィール編集</a></li>
+                    <li class="accordion_list"><a href="/logout">ログアウト</a></li>
                 </ul>
-                <div class="icon">
-                    <img class="icon" src="images/icon1.png">
-                </div>
             </nav>
+            <!-- ユーザーアイコン -->
+            <div class="user_icon">
+                <img src="images/icon1.png">
+            </div>
         </div>
     </header>
     <div id="row">
@@ -68,7 +69,7 @@
     </div>
     <footer>
     </footer>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="/public/js/app.js"></script>
+    <script src="{{ asset('https://code.jquery.com/jquery-3.4.1.min.js') }}"></script>
+    <script src="{{ asset('js/script.js') }}"></script>
 </body>
 </html>

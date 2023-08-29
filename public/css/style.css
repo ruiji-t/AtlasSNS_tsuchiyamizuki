@@ -1,13 +1,207 @@
 @charset "utf-8";
 
-html {}
+html {
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+}
 
-body {}
+body {
+    color: #705c53;
+    font-size: 1rem;
+    font-family: "YuGothic", Yu Gothic, sans-serif;
+}
+
+ul,
+li,
+ol {
+    list-style-type: none;
+}
+
+a {
+    color: #727272;
+    text-decoration: none;
+}
+
+
+img {
+    max-width: 100%;
+}
+
+
+a:hover {
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+
 
 /* header */
 header {
-    background: #186AC9;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    background-color: blue;
+    /* ヘッダーを最前面に表示するための設定 */
 }
+
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.atlas_icon {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    padding-left: 5%;
+}
+
+.atlas_icon a {
+    display: block;
+    width: fit-content;
+}
+
+.atlas_icon a img {
+    display: block;
+    width: 50%;
+    height: 40%;
+}
+
+.user_name {
+    position: absolute;
+    top: 10%;
+    right: 20%;
+    text-align: center;
+    padding: 20px 0;
+    color: #fff;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+
+/* アコーディオンメニュー(矢印) */
+.menu_button {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: 1px;
+    right: 13%;
+
+    .arrow {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: block;
+
+        &::before {
+            position: absolute;
+            content: "";
+            top: 40%;
+            left: 50%;
+            width: 15px;
+            height: 15px;
+            transform: translate(-50%, -40%) rotate(135deg);
+            border-top: 2px solid #fff;
+            border-right: 2px solid #fff;
+            transition: 0.3s ease;
+        }
+    }
+}
+
+
+.menu_button.is-open {
+    .arrow {
+        &::before {
+            top: 60%;
+            transform: translate(-50%, -60%)rotate(-45deg);
+        }
+    }
+}
+
+/* アコーディオンメニュー（コンテンツ） */
+.accordion_menu {
+    width: 25%;
+    height: 400%;
+    position: absolute;
+    top: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #fff;
+    opacity: 0;
+    transition: .3s ease-in-out;
+    pointer-events: none;
+    transform: translateY(-30px);
+    right: 0%;
+    z-index: 55;
+    border: 3px solid;
+    border-color: darkblue;
+    margin: 0;
+    padding: 0;
+}
+
+.accordion_menu ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.accordion_list {
+    display: flex;
+    align-items: center;
+    height: 33.333%;
+    width: 100%;
+
+}
+
+.accordion_list a {
+    width: 100%;
+    display: block;
+    color: darkgray;
+    font-weight: 700;
+    font-size: 22px;
+    letter-spacing: 2px;
+}
+
+.accordion_list a:hover {
+    width: 100%;
+    display: flex;
+    background-color: darkblue;
+    color: #fff;
+    height: 100%;
+    font-weight: 700;
+    font-size: 22px;
+    letter-spacing: 2px;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.accordion_menu.is-open {
+    opacity: 1;
+    transform: translateY(0);
+    /* リンク有効 */
+    pointer-events: auto;
+}
+
+
+/* ユーザーアイコン */
+.user_icon {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 5%;
+    transform: scale(80%);
+}
+
+
 
 /* main content */
 #row {
