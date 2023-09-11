@@ -20,18 +20,22 @@
   <!--OGPタグ/twitterカード-->
 </head>
 <body>
+<div class="login_layout">
   <header>
+    <div class="login_title">
     <h1>
       <a href="/top">
         <img src="images/atlas.png">
       </a>
     </h1>
     <p>Social Network Service</p>
+    </div>
   </header>
   <div id="container">
     @yield('content')
   </div>
-  <script src="JavaScriptファイルのURL"></script>
-  <script src="JavaScriptファイルのURL"></script>
+</div>
+  <script src="{{ asset('https://code.jquery.com/jquery-3.4.1.min.js') }}"></script>
+    <script src="{{ asset('js/script.js') }}"></script>
 </body>
 </html>

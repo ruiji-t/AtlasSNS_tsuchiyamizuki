@@ -36,6 +36,9 @@ Route::group(['middleware' => ['auth']],function(){
 
   Route::get('/top','PostsController@index'); // get→post
 
+  // 投稿の登録
+  Route::post('/post/create','PostsController@postCreate');
+
   Route::get('/profile','UsersController@profile');
 
   Route::get('/search','UsersController@search');

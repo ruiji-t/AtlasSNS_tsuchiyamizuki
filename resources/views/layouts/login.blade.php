@@ -21,7 +21,7 @@
 </head>
 <body>
     <header >
-        <div class="container">
+        <div class="header_container">
             <div class="atlas_icon">
                 <a href="/top"><img src="images/atlas.png"></a>
             </div>
@@ -42,7 +42,7 @@
             </nav>
             <!-- ユーザーアイコン -->
             <div class="user_icon">
-                <img src="images/icon1.png">
+                <img src=" images/{{ Auth::user()->images}}">
             </div>
         </div>
     </header>
@@ -50,21 +50,23 @@
         <div id="container">
             @yield('content')
         </div >
+
+        <!-- サイドバー -->
         <div id="side-bar">
             <div id="confirm">
-                <p>〇〇さんの</p>
-                <div>
+                <p>{{ Auth::user()->username }}  さんの</p>
+                <div class="follow_box">
                 <p>フォロー数</p>
                 <p>〇〇名</p>
                 </div>
-                <p class="btn"><a href="/follow-list">フォローリスト</a></p>
-                <div>
+                <button class="follow_btn" type="button"><a href="/follow-list">フォローリスト</a></button>
+                <div class="follower_box">
                 <p>フォロワー数</p>
                 <p>〇〇名</p>
                 </div>
-                <p class="btn"><a href="/follower-list">フォロワーリスト</a></p>
+                <button class="follower_btn" type="button"><a href="/follower-list">フォロワーリスト</a></button>
             </div>
-            <p class="btn"><a href="/search">ユーザー検索</a></p>
+            <button class="search_btn" type="button"><a href="/search">ユーザー検索</a></button>
         </div>
     </div>
     <footer>
