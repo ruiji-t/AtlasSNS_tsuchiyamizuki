@@ -37,14 +37,30 @@ Route::group(['middleware' => ['auth']],function(){
   Route::get('/top','PostsController@index'); // get→post
 
   // 投稿の登録
-  Route::post('/post/create','PostsController@postCreate');
+  Route::post('/posts/create','PostsController@postCreate');
+  // 投稿の編集
+  Route::get('/posts/{id}/update-form','PostsController@updateForm');
+  // 投稿の更新
+  Route::post('/posts/update','PostsController@postUpdate');
+  // 投稿の削除
+  Route::get('/posts/{id}/delete','PostsController@postDelete');
 
-  Route::get('/profile','UsersController@profile');
-
+  // （ユーザー）検索機能
   Route::get('/search','UsersController@search');
+  Route::post('/search','UsersController@search');
 
-  Route::get('/follow-list','PostsController@index');
-  Route::get('/follower-list','PostsController@index');
+  // フォロー解除機能
+  Route::get('/follow/{id}/delete','FollowsController@followDelete');
+  // フォロー機能
+  Route::get('/follow/{id}/create','FollowsController@follow');
+
+  // フォローリスト
+  Route::get('/follow-list','FollowsController@followList');
+  // フォロワーリスト
+  Route::get('/follower-list','FollowsController@followerList');
+
+  // プロフィールページ
+  Route::get('/users/{id}/profile','UsersController@profile');
 
 
 });

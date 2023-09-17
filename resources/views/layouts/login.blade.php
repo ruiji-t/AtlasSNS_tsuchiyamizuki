@@ -23,7 +23,7 @@
     <header >
         <div class="header_container">
             <div class="atlas_icon">
-                <a href="/top"><img src="images/atlas.png"></a>
+                <a href="/top"><img src="{{ asset('images/atlas.png') }}"></a>
             </div>
             <!-- ログインユーザー名 -->
             <div class="user_name">
@@ -42,7 +42,7 @@
             </nav>
             <!-- ユーザーアイコン -->
             <div class="user_icon">
-                <img src=" images/{{ Auth::user()->images}}">
+                <img src="{{ asset( 'images/' .Auth::user()->images ) }}">
             </div>
         </div>
     </header>
@@ -57,12 +57,12 @@
                 <p>{{ Auth::user()->username }}  さんの</p>
                 <div class="follow_box">
                 <p>フォロー数</p>
-                <p>〇〇名</p>
+                <p>{{ Auth::user()->follows()->count() }} 名</p>
                 </div>
                 <button class="follow_btn" type="button"><a href="/follow-list">フォローリスト</a></button>
                 <div class="follower_box">
                 <p>フォロワー数</p>
-                <p>〇〇名</p>
+                <p>{{ Auth::user()->followers()->count() }} 名</p>
                 </div>
                 <button class="follower_btn" type="button"><a href="/follower-list">フォロワーリスト</a></button>
             </div>
