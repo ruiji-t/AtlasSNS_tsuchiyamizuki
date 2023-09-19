@@ -50,7 +50,7 @@ class FollowsController extends Controller
     }
 
 
-    // フォロー解除機能（検索ページ）
+    // フォロー解除機能（検索ページ・プロフィールページ）
     public function followDelete($id){
         $follower = Auth::user();
         $follow_judge = $follower->isFollowing($id);
@@ -64,10 +64,10 @@ class FollowsController extends Controller
                 ['following_id','=',$follower_id],
                 ['followed_id','=',$followed_id]])->delete();
         }
-        return redirect('/search');
+        return back();
     }
 
-    // フォロー機能（検索ページ）
+    // フォロー機能（検索ページ・プロフィールページ）
     public function follow($id){
 
         $follower = Auth::user();
@@ -82,7 +82,7 @@ class FollowsController extends Controller
                 'following_id'=> $follower_id,
                 'followed_id' => $followed_id,
             ]);
-            return redirect('/search');
+            return back();
         }
     }
 

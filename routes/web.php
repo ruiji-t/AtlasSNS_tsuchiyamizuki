@@ -62,5 +62,4 @@ Route::group(['middleware' => ['auth']],function(){
   // プロフィールページ
   Route::get('/users/{id}/profile','UsersController@profile');
 
-
 });

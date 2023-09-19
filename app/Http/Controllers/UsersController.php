@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Post;
 
 class UsersController extends Controller
 {
@@ -25,7 +26,18 @@ class UsersController extends Controller
     }
 
     // プロフィールページ
-    public function profile(){
-        return view('users.profile');
+    public function profile($id){
+
+        // タップアイコンのユーザIDをもとにユーザ情報を取得
+        $users = User::where('id',$id)->first();
+
+        // Postモデル(postsテーブル)からユーザーのレコードを取得
+        $posts = Post::where('user_id',$id)
+         ->latest('updated_at')
+         ->get();
+
+        // users/profile.phpにレコードを送り表示させる
+        return view('users.profile',['users'=>$users,'posts'=>$posts]);
+
     }
 }
