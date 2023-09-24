@@ -34,7 +34,6 @@ class PostsController extends Controller
 
     // 投稿の登録
     public function postCreate(Request $request){
-        // if($request->isMethod('post')){
 
             // バリデーション設定
             $request->validate([
@@ -50,8 +49,7 @@ class PostsController extends Controller
             ]);
 
             return redirect('/top');
-        // }
-        // return view('posts.index');
+
     }
 
     // 投稿の編集

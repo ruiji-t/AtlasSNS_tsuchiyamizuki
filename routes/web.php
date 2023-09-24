@@ -59,7 +59,9 @@ Route::group(['middleware' => ['auth']],function(){
   // フォロワーリスト
   Route::get('/follower-list','FollowsController@followerList');
 
-  // プロフィールページ
-  Route::get('/users/{id}/profile','UsersController@profile');
+  // プロフィール(閲覧・編集)
+  Route::get('/users/{id}/profile','UsersController@profileView');
+  // プロフィール（編集フォーム送信）
+  Route::post('/users/update','UsersController@profileEdit');
 
 });

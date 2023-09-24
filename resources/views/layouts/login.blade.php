@@ -36,13 +36,13 @@
             <nav class="accordion_menu">
                 <ul>
                     <li class="accordion_list"><a href="/top">HOME</a></li>
-                    <li class="accordion_list"><a href="/profile">プロフィール編集</a></li>
+                    <li class="accordion_list"><a href="/users/{{ Auth::user()->id }}/profile">プロフィール編集</a></li>
                     <li class="accordion_list"><a href="/logout">ログアウト</a></li>
                 </ul>
             </nav>
             <!-- ユーザーアイコン -->
             <div class="user_icon">
-                <img src="{{ asset( 'images/' .Auth::user()->images ) }}">
+                <img src="{{ asset('storage/'.Auth::user()->images) }}">
             </div>
         </div>
     </header>

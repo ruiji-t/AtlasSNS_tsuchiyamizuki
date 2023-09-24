@@ -9,7 +9,7 @@
   <div class="icon_spot">
     @foreach($follows as $follow)
         <a href="/users/{{ $follow->id }}/profile">
-            <img src="images/{{ $follow->images }}">
+            <img src="{{ asset('storage/'.$follow->images) }}">
         </a>
     @endforeach
   </div>
@@ -20,7 +20,7 @@
         <div class="thread_container">
             <div class="posted_icon">
               <a href="/users/{{ $post->user_id }}/profile">
-                  <img src="images/{{ $post->user->images }}">
+                  <img src="{{ asset('storage/'.$post->user->images ) }}">
               </a>
             </div>
             <div class="posted_content">

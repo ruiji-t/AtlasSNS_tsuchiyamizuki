@@ -4,7 +4,7 @@
  <!-- 投稿フォーム -->
             <div id="postForm">
                 <div class="posting_icon">
-                    <img src="images/{{ Auth::user()->images}}">
+                    <img src="{{ asset('storage/'.Auth::user()->images) }}">
                 </div>
                 <div class="post_form">
                     {!! Form::open(['url' => '/posts/create']) !!}
@@ -19,7 +19,7 @@
   @foreach($posts as $post)
         <div class="thread_container">
             <div class="posted_icon">
-              <img src="images/{{ $post->user->images }}">
+              <img src="storage/{{ $post->user->images }}">
             </div>
             <div class="posted_content">
                 <p class="name">{{ $post->user->username }}</p>
@@ -63,9 +63,5 @@
         </div>
     </div>
 </div>
-
-
-
-
 
 @endsection

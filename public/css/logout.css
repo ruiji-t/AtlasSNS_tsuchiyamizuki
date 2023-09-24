@@ -46,7 +46,7 @@ img {
 }
 
 
-#container {
+#login_container {
     position: absolute;
     top: 35%;
     left: 39%;
@@ -58,26 +58,26 @@ img {
     color: #fff;
 }
 
-#container p {
+#login_container p {
     text-align: center;
     margin-top: 15%;
     margin-bottom: 10%;
     font-size: large;
 }
 
-#container a {
+#login_container a {
     color: #fff;
     font-size: medium;
     margin-top: 10%;
 }
 
 
-#container form {
+#login_container form {
     display: flex;
     flex-flow: column;
 }
 
-#container label {
+#login_container label {
     width: 80%;
     padding-left: 10%;
     padding-bottom: 5px;
@@ -85,7 +85,7 @@ img {
     font-size: small;
 }
 
-#container .input {
+#login_container .input {
     width: 80%;
     height: 35px;
     margin-bottom: 20px;
@@ -107,3 +107,160 @@ img {
 }
 
 /* 新規登録・登録後レイアウト*/
+
+.register_title {
+    position: absolute;
+    top: 100px;
+    left: 37.5%;
+    text-align: center;
+    color: #fff;
+    font-size: xx-large;
+    font-weight: 500;
+}
+
+
+
+#register_container {
+    position: absolute;
+    top: 25%;
+    left: 39%;
+    width: 22%;
+    height: 65%;
+    /* 背景のみ透過 */
+    background-color: rgba(80, 80, 80, 0.4);
+    border-radius: 10px;
+    color: #fff;
+}
+
+#register_container p {
+    text-align: center;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    font-size: large;
+}
+
+#register_container a {
+    color: #fff;
+    font-size: medium;
+    margin-top: 10%;
+}
+
+
+#register_container form {
+    display: flex;
+    flex-flow: column;
+}
+
+#register_container label {
+    width: 80%;
+    padding-left: 10%;
+    padding-bottom: 5px;
+    text-transform: lowercase;
+    font-size: small;
+}
+
+.new_input {
+    width: 80%;
+    height: 35px;
+    margin-bottom: 20px;
+    margin-left: 10%;
+    border-radius: 6px;
+    border: 1px gray;
+}
+
+input[type='password'] {
+    width: 80%;
+    height: 35px;
+    margin-bottom: 20px;
+    margin-left: 10%;
+    border-radius: 6px;
+    border: 1px gray;
+}
+
+.register_button {
+    width: 40%;
+    height: 40px;
+    border-radius: 6px;
+    border: 1px gray;
+    background-color: crimson;
+    color: #fff;
+    font-size: large;
+    margin-top: 5%;
+    margin-left: 52%;
+    cursor: pointer;
+}
+
+
+/* 登録完了画面 */
+.added_title {
+    position: absolute;
+    top: 150px;
+    left: 38%;
+    text-align: center;
+    color: #fff;
+    font-size: xx-large;
+    font-weight: 500;
+}
+
+#clear_container {
+    position: absolute;
+    top: 36%;
+    left: 39%;
+    width: 22%;
+    height: 35%;
+    /* 背景のみ透過 */
+    background-color: rgba(80, 80, 80, 0.4);
+    border-radius: 10px;
+    color: #fff;
+}
+
+#clear_container p:nth-child(1) {
+    text-align: center;
+    margin-top: 11%;
+    margin-bottom: 5%;
+    font-size: large;
+    font-weight: 700;
+}
+
+#clear_container p:nth-child(2) {
+    text-align: center;
+    margin-bottom: 15%;
+    font-size: large;
+    font-weight: 700;
+}
+
+#clear_container p:nth-child(3) {
+    text-align: center;
+    margin-bottom: 5%;
+}
+
+#clear_container p:nth-child(4) {
+    text-align: center;
+    margin-bottom: 10%;
+}
+
+#clear_container p:nth-child(5) {
+    text-align: center;
+    margin-bottom: 10%;
+}
+
+
+#clear_container .btn {
+    width: 45%;
+    height: 30px;
+    border-radius: 6px;
+    border: 1px gray;
+    background-color: crimson;
+    color: #fff;
+    font-size: large;
+    margin-top: 10%;
+    margin-left: 27%;
+    cursor: pointer;
+    padding-top: 10px;
+}
+
+#clear_container a {
+    color: #fff;
+    font-size: medium;
+    margin-top: 10%;
+}

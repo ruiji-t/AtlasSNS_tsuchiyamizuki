@@ -431,9 +431,9 @@ header {
 
 /* サイドバー */
 #side-bar {
-    flex: 0 0 20%;
     border-left: 1px solid #727272;
     height: 100%;
+    width: 17%;
 }
 
 #confirm {
@@ -715,4 +715,101 @@ header {
 #userProfile .follow_situation {
     margin-top: 50px;
     margin-left: 70px;
+}
+
+
+/* [プロフィール編集ページ] */
+#editProfile {
+    width: 80%;
+    height: 80%;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.edit_icon {
+    width: 35%;
+    height: 100%;
+}
+
+.edit_icon img {
+    margin-top: 60px;
+    margin-left: 220px;
+    width: 45px;
+    height: 45px;
+}
+
+.edit_form {
+    width: 65%;
+    padding-top: 63px;
+}
+
+.edit_form div {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-bottom: 40px;
+}
+
+.edit_form label {
+    font-size: x-large;
+    color: #000;
+    font-weight: 500;
+    display: inline-block;
+    width: 310px;
+    margin-top: 6px;
+    margin-right: 40px;
+}
+
+.edit_form .edit_space input {
+    display: inline-block;
+    width: 480px;
+    height: 35px;
+    border: 1px solid #727272;
+    background-color: rgba(100, 100, 100, 0.1);
+    font-size: large;
+    padding-left: 5px;
+}
+
+.edit_form textarea {
+    display: inline-block;
+    font-size: large;
+    width: 480px;
+    height: 35px;
+    border: 1px solid #727272;
+    background-color: rgba(100, 100, 100, 0.1);
+    resize: vertical;
+    padding-left: 5px;
+    padding-top: 5px;
+}
+
+/* 画像アップロードフォーム */
+.edit_file {
+    padding-left: 80px;
+    padding-top: 30px;
+    background-color: rgba(100, 100, 100, 0.1);
+    width: 365px;
+    height: 70px;
+    border: 1px solid #727272;
+    color: rgba(100, 100, 100, 0);
+    font-size: larger;
+}
+
+/* フォーム内「ファイルを選択」ボタン */
+.edit_form .edit_file::file-selector-button {
+    border: 0;
+    background-color: #fff;
+    color: rgba(100, 100, 100, 0.5);
+    padding: 5px 10px 5px 10px;
+}
+
+.update_button {
+    width: 150px;
+    height: 35px;
+    font-size: large;
+    border-radius: 5px;
+    border: 1px solid #FF3366;
+    background-color: #FF3366;
+    color: #fff;
+    margin-top: 10px;
+    margin-left: 160px;
+    cursor: pointer;
 }

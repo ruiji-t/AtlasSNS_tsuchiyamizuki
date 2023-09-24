@@ -22,7 +22,7 @@
    @if(Auth::id() != $user->id)
     <table class="user_situation">
       <tr>
-      <td class="searched_icon"><img src="images/{{ $user->images }}"></td>
+      <td class="searched_icon"><img src="{{ asset('storage/'.$user->images) }}"></td>
       <td class="searched_name">{{ $user->username }}</td>
       <td class="follow_situation">
 
