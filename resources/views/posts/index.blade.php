@@ -6,11 +6,23 @@
                 <div class="posting_icon">
                     <img src="{{ asset('storage/'.Auth::user()->images) }}">
                 </div>
-                <div class="post_form">
+                <div>
+                    <!-- バリデーション -->
+                    @if($errors->has('post_content'))
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                    @endif
+                    <div class="post_form">
                     {!! Form::open(['url' => '/posts/create']) !!}
                     {{ Form::input('textarea','post_content',null,['class' => 'post_area','cols' => '50','rows' => '3','placeholder'=>'投稿内容を入力してください。']) }}
                     <input type="image" class="post_submit" src="images/post.png">
                     {!! Form::close() !!}
+                    </div>
                 </div>
             </div>
 
@@ -53,6 +65,16 @@
         <div class="modal__bg js-modal-close"></div>
         <div class="modal__content">
            <form action="/posts/update" method="post">
+                <!-- バリデーション -->
+                @if($errors->has('update_content'))
+                    <div class="alert-danger">
+                        <ul>
+                            @foreach($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                 <textarea name="update_content" class="modal_post"></textarea>
                 <input type="hidden" name="update_id" class="modal_id" value="">
                 <!-- <input type="submit" value="更新"> -->

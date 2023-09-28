@@ -10,7 +10,16 @@
     </div>
     <div class="edit_form">
         <form action="/users/update" method="post" enctype="multipart/form-data">
-
+             <!-- バリデーション -->
+                @if($errors->any())
+                    <div class="alert-danger">
+                        <ul>
+                            @foreach($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
           <div class="edit_space">
           <label for="newUsername">user name</label>
           <input type="text" name="username" value="{{ $users->username }}" id="newUsername">

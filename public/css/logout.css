@@ -5,9 +5,15 @@ html {
 }
 
 
+.alert {
+    font-size: small;
+    color: red;
+    margin-left: 10%;
+}
+
 /* ログイン */
 .login_layout {
-    height: 97vh;
+    height: 100vh;
     background: linear-gradient(to bottom, dodgerblue 40%, gold);
 }
 
@@ -25,14 +31,13 @@ a:hover {
 }
 
 header {
-    height: 30%;
+    height: 25%;
     width: 100%;
     position: relative;
 }
 
 .login_title {
-    position: absolute;
-    bottom: 0px;
+    padding-top: 12%;
     left: 38%;
     text-align: center;
     color: #fff;
@@ -41,8 +46,8 @@ header {
 }
 
 img {
-    height: 50%;
-    width: 40%;
+    height: 20%;
+    width: 10%;
 }
 
 
@@ -58,10 +63,10 @@ img {
     color: #fff;
 }
 
-#login_container p {
+#login_container .area_title {
     text-align: center;
-    margin-top: 15%;
-    margin-bottom: 10%;
+    margin-top: 10%;
+    margin-bottom: 8%;
     font-size: large;
 }
 
@@ -70,7 +75,6 @@ img {
     font-size: medium;
     margin-top: 10%;
 }
-
 
 #login_container form {
     display: flex;
@@ -88,7 +92,7 @@ img {
 #login_container .input {
     width: 80%;
     height: 35px;
-    margin-bottom: 20px;
+    margin-bottom: 17px;
     margin-left: 10%;
     border-radius: 6px;
     border: 1px gray;
@@ -106,24 +110,33 @@ img {
     cursor: pointer;
 }
 
+#login_container .register_page {
+    position: absolute;
+    bottom: 5%;
+    left: 17%;
+}
+
+
 /* 新規登録・登録後レイアウト*/
 
 .register_title {
-    position: absolute;
-    top: 100px;
-    left: 37.5%;
+    padding-top: 10%;
     text-align: center;
     color: #fff;
     font-size: xx-large;
     font-weight: 500;
 }
 
-
+.register_title img {
+    width: 10%;
+    height: 20%;
+}
 
 #register_container {
-    position: absolute;
-    top: 25%;
-    left: 39%;
+    position: relative;
+    display: block;
+    margin-top: 3%;
+    margin-left: 39%;
     width: 22%;
     height: 65%;
     /* 背景のみ透過 */
@@ -132,17 +145,16 @@ img {
     color: #fff;
 }
 
-#register_container p {
+#register_container .area_title {
     text-align: center;
-    margin-top: 10%;
-    margin-bottom: 10%;
-    font-size: large;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    font-size: larger;
 }
 
 #register_container a {
     color: #fff;
     font-size: medium;
-    margin-top: 10%;
 }
 
 
@@ -179,27 +191,37 @@ input[type='password'] {
 
 .register_button {
     width: 40%;
-    height: 40px;
+    height: 34px;
     border-radius: 6px;
     border: 1px gray;
     background-color: crimson;
     color: #fff;
     font-size: large;
-    margin-top: 5%;
+    margin-top: 2%;
     margin-left: 52%;
     cursor: pointer;
+}
+
+#register_container .login_page {
+    position: absolute;
+    bottom: 2%;
+    left: 26%;
+    font-size: large;
 }
 
 
 /* 登録完了画面 */
 .added_title {
-    position: absolute;
-    top: 150px;
-    left: 38%;
+    padding-top: 13%;
     text-align: center;
     color: #fff;
     font-size: xx-large;
     font-weight: 500;
+}
+
+.added_title img {
+    width: 10%;
+    height: 20%;
 }
 
 #clear_container {
@@ -218,14 +240,12 @@ input[type='password'] {
     text-align: center;
     margin-top: 11%;
     margin-bottom: 5%;
-    font-size: large;
     font-weight: 700;
 }
 
 #clear_container p:nth-child(2) {
     text-align: center;
     margin-bottom: 15%;
-    font-size: large;
     font-weight: 700;
 }
 
@@ -236,12 +256,11 @@ input[type='password'] {
 
 #clear_container p:nth-child(4) {
     text-align: center;
-    margin-bottom: 10%;
+    margin-bottom: 5%;
 }
 
 #clear_container p:nth-child(5) {
     text-align: center;
-    margin-bottom: 10%;
 }
 
 
@@ -253,7 +272,6 @@ input[type='password'] {
     background-color: crimson;
     color: #fff;
     font-size: large;
-    margin-top: 10%;
     margin-left: 27%;
     cursor: pointer;
     padding-top: 10px;
@@ -262,5 +280,5 @@ input[type='password'] {
 #clear_container a {
     color: #fff;
     font-size: medium;
-    margin-top: 10%;
+    margin-top: 8%;
 }

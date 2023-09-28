@@ -18,7 +18,7 @@
 
 {!! Form::open(['url' => '/login']) !!}
 
-<p>AtlasSNSへようこそ</p>
+<p class="area_title">AtlasSNSへようこそ</p>
 
 {{ Form::label('mail adress') }}
 {{ Form::email('mail',null,['class' => 'input']) }}
@@ -27,7 +27,7 @@
 
 {{ Form::submit('LOGIN',['class'=>'login_button']) }}
 
-<p><a href="/register">新規ユーザーの方はこちら</a></p>
+<p class="register_page"><a href="/register">新規ユーザーの方はこちら</a></p>
 
 {!! Form::close() !!}
 </div>

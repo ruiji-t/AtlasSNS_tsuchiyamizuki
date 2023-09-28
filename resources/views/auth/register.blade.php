@@ -17,7 +17,7 @@
 <!-- 適切なURLを入力してください -->
 {!! Form::open(['url' => '/register']) !!}
 
-<p>新規ユーザー登録</p>
+<p class="area_title">新規ユーザー登録</p>
 
 @if($errors->any())
     <div class="alert alert-danger">
@@ -43,7 +43,7 @@
 
 {{ Form::submit('REGISTER',['class'=>'register_button']) }}
 
-<p><a href="/login">ログイン画面に戻る</a></p>
+<p class="login_page"><a href="/login">ログイン画面に戻る</a></p>
 
 
 
